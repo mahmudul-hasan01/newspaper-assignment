@@ -23,44 +23,7 @@ const NavBar = () => {
     }
     return (
         <div className="flex justify-between items-center h-24">
-            {/* <nav className="bg-white border-gray-200 dark:bg-gray-900">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-                    </a>
-
-                    {
-                        user?.email &&
-                        <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                            <button onClick={() => setOpen(!open)} type="button" className="flex relative text-sm items-center gap-3 border-2 px-2 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                                <AiOutlineAlignRight className="text-2xl" />
-                                <img className="w-10 h-10 rounded-full" src={logo} alt="user photo" />
-                            </button>
-
-                            <div className={`z-50 lg:hidden absolute my-4 w-[100%] text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${open ? "top-20 md:top-36" : "-top-96"}`} id="user-dropdown">
-                                <ul className="w-full flex flex-col" aria-labelledby="user-menu-button">
-                                    {navLink}
-                                </ul>
-                            </div>
-                        </div>
-
-                    }
-
-
-                    <div className="flex flex-row-reverse gap-20">
-                        <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-                            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                                {navLink}
-                            </ul>
-                        </div>
-                        {
-                            user?.email ?  '' : <Link className="text-xl py-2 px-4 border-2 rounded-lg border-black" to='/login'>Login</Link>
-                        }
-                    </div>
-                </div>
-            </nav> */}
-
+           
             <div>
                 <img className="w-20 h-14" src={user?.photoURL} alt="" />
             </div>

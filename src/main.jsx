@@ -17,6 +17,8 @@ import Dashboard from './Page/Dashboard/Dashboard.jsx';
 import MyArticles from './Page/MyArticles/MyArticles.jsx';
 import PremiumArticles from './Page/PremiumArticles/PremiumArticles.jsx';
 import UserPhoto from './Page/UserPhoto/UserPhoto.jsx';
+import AllUser from './Page/Dashboard/AllUser/AllUser.jsx';
+import AddPublisher from './Page/Dashboard/AddPublisher/AddPublisher.jsx';
 
 const router = createBrowserRouter([
   {
@@ -46,11 +48,7 @@ const router = createBrowserRouter([
       {
         path: 'subscription',
         element: <Subscription></Subscription>
-      },
-      {
-        path: 'dashboard',
-        element: <Dashboard></Dashboard>
-      },
+      }, 
       {
         path: 'myArticles',
         element: <MyArticles></MyArticles>
@@ -62,6 +60,24 @@ const router = createBrowserRouter([
       {
         path: 'userPhoto',
         element: <UserPhoto></UserPhoto>
+      }
+    ]
+  },
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path:'allUser',
+        element: <AllUser></AllUser>
+      },
+      {
+        path:'allArticles',
+        element: <AllArticles></AllArticles>
+      },
+      {
+        path:'addPublisher',
+        element: <AddPublisher></AddPublisher>
       }
     ]
   },
