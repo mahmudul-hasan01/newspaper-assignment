@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { all } from "axios";
 import { useQuery } from "@tanstack/react-query";
 import AllArticles from "../AllArticles/AllArticles";
 import { useState } from "react";
@@ -48,12 +48,13 @@ const AddArticles = () => {
             status:'pending',
             premiim:''
         }
-        
+        axios.post('http://localhost:5000/publisher',allData)
+        .then(res=> console.log(res.data))
 
         // const logo =data?.data?.display_url
         // const publisherData ={name , logo}
-        // await axios.post('http://localhost:5000/publisher')
-        // .then(res=> console.log(res.data))
+        // await 
+        // .
 
     }
     // const selectdata =()=>{
