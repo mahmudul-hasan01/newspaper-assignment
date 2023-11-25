@@ -8,7 +8,7 @@ const Dashboard = () => {
 
                 <NavLink className='px-3 py-2 bg-orange-400 rounded-md' to='/dashboard/allUser'>All User</NavLink>
 
-                <NavLink className='px-3 py-2 bg-orange-400 rounded-md' to='/dashboard/allArticles'>All Articles</NavLink>
+                <NavLink className='px-3 py-2 bg-orange-400 rounded-md' to='/dashboard/allArticle'>All Articles</NavLink>
 
                 <NavLink className='px-3 py-2 bg-orange-400 rounded-md' to='/dashboard/addPublisher'>Add Publisher</NavLink>
 

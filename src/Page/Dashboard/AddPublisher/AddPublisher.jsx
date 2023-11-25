@@ -8,21 +8,19 @@ const AddPublisher = () => {
         e.preventDefault()
         const form = e.target
         const name = form.name.value
-        const logo = form.logo.files[0]
+        const logos = form.logo.files[0]
         const formData = new FormData()
-        formData.append('image', logo)
+        formData.append('image', logos)
         const { data } = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KYE}`, formData)
-        const logos =data?.data?.display_url
-        const publisherData ={name , logos}
-        console.log(publisherData)
-        await axios.post('http://localhost:5000/publisher')
+        const logo =data?.data?.display_url
+        const publisherData ={name , logo}
+        await axios.post('http://localhost:5000/publisher',publisherData)
         .then(res=> console.log(res.data))
 
     }
 
     return (
         <div className="flex justify-center h-full items-center">
-
             <form onSubmit={hendleSubmit} className="max-w-sm mx-auto">
                 <div className="">
                     <div className="mb-5">

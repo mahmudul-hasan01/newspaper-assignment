@@ -5,6 +5,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import MainLayout from './MainLayout/MainLayout.jsx';
 import Login from './Components/Login/Login.jsx';
 import AuthProvider from './Components/AuthProvider/AuthProvider.jsx';
@@ -26,7 +30,7 @@ const router = createBrowserRouter([
     element: <MainLayout></MainLayout>,
     children: [
       {
-        path:'home',
+        path: 'home',
         element: <Home></Home>
       },
       {
@@ -48,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: 'subscription',
         element: <Subscription></Subscription>
-      }, 
+      },
       {
         path: 'myArticles',
         element: <MyArticles></MyArticles>
@@ -68,25 +72,30 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path:'allUser',
+        path: 'allUser',
         element: <AllUser></AllUser>
       },
       {
-        path:'allArticles',
+        path: 'allArticle',
         element: <AllArticles></AllArticles>
       },
       {
-        path:'addPublisher',
+        path: 'addPublisher',
         element: <AddPublisher></AddPublisher>
       }
     ]
   },
 ]);
 
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
+
   </React.StrictMode>,
 )
