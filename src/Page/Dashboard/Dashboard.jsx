@@ -12,6 +12,8 @@ const Dashboard = () => {
 
                 <NavLink className='px-3 py-2 bg-orange-400 rounded-md' to='/dashboard/addPublisher'>Add Publisher</NavLink>
 
+                <NavLink className='px-3 py-2 bg-orange-400 rounded-md' to='/'>Home</NavLink>
+
             </div>
             <div className="h-[100vh] w-screen ">
                 <Outlet></Outlet>

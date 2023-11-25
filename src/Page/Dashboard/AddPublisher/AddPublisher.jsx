@@ -1,5 +1,6 @@
 import axios from "axios";
-import { imageUplode } from "../../../Hook/Image/ImageHost";
+// import allLink from "../../../Hook/link/allLink";
+// import { imageUplode } from "../../../Hook/Image/ImageHost";
 
 const AddPublisher = () => {
 
@@ -8,11 +9,14 @@ const AddPublisher = () => {
         const form = e.target
         const name = form.name.value
         const logo = form.logo.files[0]
-        console.log(name, logo)
         const formData = new FormData()
         formData.append('image', logo)
         const { data } = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KYE}`, formData)
-        console.log(data?.data?.display_url)
+        const logos =data?.data?.display_url
+        const publisherData ={name , logos}
+        console.log(publisherData)
+        await axios.post('http://localhost:5000/publisher')
+        .then(res=> console.log(res.data))
 
     }
 
