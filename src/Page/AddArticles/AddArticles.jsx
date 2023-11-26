@@ -10,7 +10,7 @@ const AddArticles = () => {
     const [tags, setTags] = useState(null)
     const [open, setOpen] = useState(false)
     const { user } = useAuth()
-    
+
     const publisherInfo = async () => {
         const data = await axios.get(`http://localhost:5000/publisher`, { withCredentials: true })
         return data
@@ -25,7 +25,7 @@ const AddArticles = () => {
         const form = e.target
         const title = form.title.value
         const images = form.image.files[0]
-        // const publisher = form.publisher.value
+        const publisher = form.publisher.value
         const description = form.description.value
         const name = user?.displayName
         const email = user?.email
@@ -38,7 +38,7 @@ const AddArticles = () => {
         const allData = {
             title,
             image,
-            publisher:'nai',
+            publisher,
             description,
             tags,
             name,
@@ -48,31 +48,10 @@ const AddArticles = () => {
             premium: '',
             date
         }
-        // console.log(allData)
         axios.post('http://localhost:5000/addArticle', allData)
             .then(res => console.log(res.data))
 
-        // const logo =data?.data?.display_url
-        // const publisherData ={name , logo}
-        // await 
-        // .
-
     }
-    // const selectdata =()=>{
-
-    //     const options = [
-    //       { value: 'chocolate', label: 'Chocolate' },
-    //       { value: 'strawberry', label: 'Strawberry' },
-    //       { value: 'vanilla', label: 'Vanilla' }
-    //     ]
-
-    //     const MyComponent = (data) => (
-    //       setPublisher(data.value)
-    //       )
-    //     return <Select options={options} onChange={MyComponent}/>
-    // }
-    // console.log(selectdata)
-
 
     return (
         <div>
@@ -80,13 +59,16 @@ const AddArticles = () => {
             <form onSubmit={hendleSubmit} className="max-w-sm mx-auto">
                 <div className="mb-5">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                    {/* <select name="publisher" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                    <select name="publisher" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                        {
+                            data?.data.map((item) => <option key={item._id}>{item.name}</option>)
+                        }
                         
-                    </select> */}
+                    </select>
 
 
 
-                    <button onClick={() => setOpen(!open)} id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className="text-white bg-blue-700 relative hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    {/* <button onClick={() => setOpen(!open)} id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className="text-white bg-blue-700 relative hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" d="m1 1 4 4 4-4" />
                     </svg>
                     </button>
@@ -99,7 +81,7 @@ const AddArticles = () => {
                                 }
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
 
 
 

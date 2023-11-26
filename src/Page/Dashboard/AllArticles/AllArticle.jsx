@@ -7,7 +7,7 @@ const AllArticle = () => {
         const data = await axios.get(`http://localhost:5000/addArticle`, { withCredentials: true })
         return data
     }
-    const { data } = useQuery({
+    const { data,refetch } = useQuery({
         queryKey: ['addArticle'],
         queryFn: publisherInfo
     })
@@ -56,7 +56,7 @@ const AllArticle = () => {
                     </thead>
 
                     {
-                        data?.data.map(item => <ArticleInfo key={item._id} info={item}></ArticleInfo>)
+                        data?.data.map(item => <ArticleInfo key={item._id} refetch={refetch} info={item}></ArticleInfo>)
                     }
 
                 </table>
