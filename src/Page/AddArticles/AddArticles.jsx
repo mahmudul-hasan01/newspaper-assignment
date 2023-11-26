@@ -45,7 +45,7 @@ const AddArticles = () => {
             photo,
             email,
             status: 'pending',
-            premium: '',
+            premium: 'no',
             date
         }
         axios.post('http://localhost:5000/addArticle', allData)
@@ -65,27 +65,6 @@ const AddArticles = () => {
                         }
                         
                     </select>
-
-
-
-                    {/* <button onClick={() => setOpen(!open)} id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className="text-white bg-blue-700 relative hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" d="m1 1 4 4 4-4" />
-                    </svg>
-                    </button>
-
-                    <div id="dropdownHover" className={`z-10  absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 ${open ? "visible" : "hidden"}`}>
-                        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                            <li>
-                                {
-                                    data?.data.map((item, index) => <a key={index} href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{item.name}</a>)
-                                }
-                            </li>
-                        </ul>
-                    </div> */}
-
-
-
-
                 </div>
                 <SelectTag setTags={setTags}></SelectTag>
                 <div className="mb-5">

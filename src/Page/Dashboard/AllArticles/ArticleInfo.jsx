@@ -1,27 +1,45 @@
 import axios from "axios";
 import { MdDeleteForever } from "react-icons/md";
+import Modal from "./Modal";
+import { useState } from "react";
+import PremiumModal from "./PremiumModal";
 
-const ArticleInfo = ({ info,refetch }) => {
+const ArticleInfo = ({ info, refetch }) => {
     const { _id, title, image, publisher, description, tags, name, photo, email, status, premium, date } = info
+    const [decline, setDecline] = useState(null)
 
     const hendleApproved = () => {
         const status = 'Approved'
-        const data ={status}
+        const data = { status }
         axios.patch(`http://localhost:5000/addArticle/${_id}`, data)
             .then(data => console.log(data?.data))
+        refetch()
+    }
+
+    const hendlePremium = (e) => {
+        e.preventDefault()
+        const premium = 'yes'
+        const data = { premium }
+        console.log(data)
+        axios.patch(`http://localhost:5000/premium/${_id}`,data )
+            .then(data => console.log(data?.data))
+            refetch()
     }
 
 
     const hendleDelete = (id) => {
         axios.delete(`http://localhost:5000/addArticles/${id}`)
             .then(data => console.log(data?.data))
-            refetch()
+        refetch()
     }
 
     return (
         <tbody>
 
             <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <td className="px-2 py-4">
+                    <img className="w-14 h-14 rounded-full" src={photo} alt="" />
+                </td>
                 <th scope="row" className="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {title}
                 </th>
@@ -30,9 +48,6 @@ const ArticleInfo = ({ info,refetch }) => {
                 </td>
                 <td className="px-2 py-4">
                     {email}
-                </td>
-                <td className="px-2 py-4">
-                    <img className="w-14 h-14 rounded-full" src={photo} alt="" />
                 </td>
                 <td className="px-2 py-4">
                     {date}
@@ -47,10 +62,11 @@ const ArticleInfo = ({ info,refetch }) => {
                     <button onClick={hendleApproved}>Approved</button>
                 </td>
                 <td className="px-2 py-4">
-                    <button>dicline</button>
+                    <Modal _id={_id} refetch={refetch}></Modal>
                 </td>
                 <td className="px-2 py-4">
-                    <button>make premium</button>
+                    {/* <PremiumModal _id={_id} refetch={refetch}></PremiumModal> */}
+                    <button onClick={hendlePremium}>Premium</button>
                 </td>
                 <td className="px-2 py-4">
                     <button onClick={() => hendleDelete(_id)}><MdDeleteForever className='text-3xl' /></button>

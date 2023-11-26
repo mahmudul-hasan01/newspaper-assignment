@@ -7,7 +7,7 @@ const AllArticle = () => {
         const data = await axios.get(`http://localhost:5000/addArticle`, { withCredentials: true })
         return data
     }
-    const { data,refetch } = useQuery({
+    const { data, refetch } = useQuery({
         queryKey: ['addArticle'],
         queryFn: publisherInfo
     })
@@ -20,6 +20,9 @@ const AllArticle = () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
+                                Photo
+                            </th>
+                            <th scope="col" className="px-6 py-3">
                                 Title
                             </th>
                             <th scope="col" className="px-6 py-3">
@@ -27,9 +30,6 @@ const AllArticle = () => {
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Email
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Photo
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Post Date
@@ -54,11 +54,9 @@ const AllArticle = () => {
                             </th>
                         </tr>
                     </thead>
-
-                    {
-                        data?.data.map(item => <ArticleInfo key={item._id} refetch={refetch} info={item}></ArticleInfo>)
-                    }
-
+                        {
+                            data?.data.map(item => <ArticleInfo key={item._id} refetch={refetch} info={item}></ArticleInfo>)
+                        }
                 </table>
             </div>
 
