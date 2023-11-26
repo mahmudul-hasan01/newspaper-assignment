@@ -23,6 +23,7 @@ import PremiumArticles from './Page/PremiumArticles/PremiumArticles.jsx';
 import UserPhoto from './Page/UserPhoto/UserPhoto.jsx';
 import AllUser from './Page/Dashboard/AllUser/AllUser.jsx';
 import AddPublisher from './Page/Dashboard/AddPublisher/AddPublisher.jsx';
+import AllArticle from './Page/Dashboard/AllArticles/AllArticle.jsx';
 
 const router = createBrowserRouter([
   {
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'allArticle',
-        element: <AllArticles></AllArticles>
+        element: <AllArticle></AllArticle>
       },
       {
         path: 'addPublisher',
