@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Subscription = () => {
+const CheckoutForm = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Subscription = () => {
     );
 };
 
-export default Subscription;
+export default CheckoutForm;

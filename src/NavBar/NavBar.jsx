@@ -27,9 +27,9 @@ const NavBar = () => {
             <div>
                 <img className="w-20 h-14" src={user?.photoURL} alt="" />
             </div>
-            <div className="xl:flex gap-5 hidden xl:visible text-xl">
+            {/* <div className="xl:flex gap-5 hidden xl:visible text-xl">
                 {navLink}
-            </div>
+            </div> */}
 
             <div>
 
@@ -39,9 +39,9 @@ const NavBar = () => {
                             <AiOutlineAlignRight className="w-7 h-7" />
                             <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
                             <div className={`absolute border-2 z-50 ${open ? "top-20 right-1 md:top-20" : "-top-[600px]"}`}>
-                                <div className="">
+                                {/* <div className="">
                                     
-                                </div>
+                                </div> */}
 
                                 <div id="dropdownInformation" className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                     <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
@@ -49,7 +49,7 @@ const NavBar = () => {
                                         <div className="font-medium truncate">{user?.email}</div>
                                     </div>
                                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-                                        <li className="flex xl:hidden flex-col gap-2 px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        <li className="flex flex-col gap-2 px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                         {navLink}
                                         </li>
                                     </ul>
