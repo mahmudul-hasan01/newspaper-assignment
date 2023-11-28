@@ -59,16 +59,13 @@ const AllArticles = () => {
                 hasMore={hasNextPage}
                 loader={<div>...loding</div>}
             >
-                <div className="grid grid-cols-2 gap-5 mt-10">
+                <div className="grid grid-cols-1 w-[100%] gap-5 mt-10">
                     {
                         articles?.map(item => <AllArticlesCart key={item._id} item={item}></AllArticlesCart>)
                     }
                 </div >
 
             </InfiniteScroll >
-            {/* {
-                    articles?.map(item => <AllArticlesCart key={item._id} item={item}></AllArticlesCart>)
-                } */}
 
         </div >
     );
