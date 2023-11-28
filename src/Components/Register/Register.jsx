@@ -5,22 +5,10 @@ import { imageUplode } from '../../Hook/Image/ImageHost';
 import useAuth from '../../Hook/AuthHook/useAuth';
 import axios from 'axios';
 import { saveUser } from '../../Hook/UserData/userData';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const { register, googleLogin, updateUserProfile, user } = useAuth()
-    // const userName =user?.displayName
-    // const userEmail =user?.email
-    // const photoURL =user?.photoURL
-    // const status = 'pending'
-    // console.log({name,email,photoURL,status})
-
-    const currentUser ={
-        email: user?.email,
-        name: user?.displayName,
-        image: user?.photoURL,
-        role: 'user'
-    }
-    const email =user?.email
 
     const handleRegister = async (e) => {
         e.preventDefault()
@@ -36,12 +24,7 @@ const Register = () => {
 
             const result = await register(email, password)
             await updateUserProfile(name, data?.data?.display_url)
-            // const  datas  = await axios.put(`http://localhost:5000/user/${user?.email}`, currentUser)
-            // console.log(datas?.data)
-            const info =await saveUser(result?.user)
-            console.log(info)
-
-
+            await saveUser(result?.user)
         }
         catch (err) {
             console.log(err)
@@ -91,7 +74,7 @@ const Register = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Photo</label>
                             <input type="file" name='photo' id="Photo" placeholder="Enter Your Photo" />
                         </div>
-
+                        <span className='text-blue-500'><Link to='/login'>Login</Link></span>
                         <div className="form-control mt-6">
                             <button className="py-2 px-5 rounded-lg text-white bg-yellow-500">Register</button>
                         </div>

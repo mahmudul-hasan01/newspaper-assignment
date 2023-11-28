@@ -13,7 +13,7 @@ const NavBar = () => {
         <NavLink to='/subscription'>Subscription</NavLink>
         <NavLink to='/myArticles'>My Articles</NavLink>
         <NavLink to='/premiumArticles'>Premium Articles</NavLink>
-        <NavLink to='/userPhoto'>User Photo</NavLink>
+        <NavLink to='/userPhoto'>My Profile</NavLink>
         <NavLink to='/dashboard'>Dashboard</NavLink>
     </>
     const hendleLogout = () => {
