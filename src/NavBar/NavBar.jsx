@@ -27,9 +27,9 @@ const NavBar = () => {
             <div>
                 <img className="w-20 h-14" src={user?.photoURL} alt="" />
             </div>
-            {/* <div className="xl:flex gap-5 hidden xl:visible text-xl">
+            <div className="xl:flex gap-5 hidden xl:visible text-xl">
                 {navLink}
-            </div> */}
+            </div>
 
             <div>
 
@@ -48,7 +48,7 @@ const NavBar = () => {
                                         <div>{user?.displayName}</div>
                                         <div className="font-medium truncate">{user?.email}</div>
                                     </div>
-                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                                    <ul className="py-2 text-sm xl:hidden text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                                         <li className="flex flex-col gap-2 px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                         {navLink}
                                         </li>
