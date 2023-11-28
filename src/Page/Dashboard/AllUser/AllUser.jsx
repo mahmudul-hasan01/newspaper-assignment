@@ -23,31 +23,17 @@ const AllUser = () => {
                                 Photo
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Title
-                            </th>
-                            <th scope="col" className="px-6 py-3">
                                 Name
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Email
                             </th>
+                            
                             <th scope="col" className="px-6 py-3">
-                                Post Date
+                                Role
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Status
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Publisher
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Approve
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Decline
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Premium
+                                Make Admin
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Delete
