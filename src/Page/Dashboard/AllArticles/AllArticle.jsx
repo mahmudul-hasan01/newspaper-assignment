@@ -4,7 +4,7 @@ import ArticleInfo from "./ArticleInfo";
 
 const AllArticle = () => {
     const publisherInfo = async () => {
-        const data = await axios.get(`http://localhost:5000/addArticle`, { withCredentials: true })
+        const data = await axios.get(`https://server-smoky-theta.vercel.app/addArticle`, { withCredentials: true })
         return data
     }
     const { data, refetch } = useQuery({
@@ -21,9 +21,6 @@ const AllArticle = () => {
                         <tr>
                             <th scope="col" className="px-6 py-3">
                                 Photo
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Title
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Name
@@ -51,6 +48,9 @@ const AllArticle = () => {
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Delete
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Title
                             </th>
                         </tr>
                     </thead>

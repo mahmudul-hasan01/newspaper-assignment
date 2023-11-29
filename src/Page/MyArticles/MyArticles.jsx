@@ -6,7 +6,7 @@ import MyArticlesCart from "./MyArticlesCart";
 const MyArticles = () => {
     const {user}=useAuth()
     const myArticles = async () => {
-        const data = await axios.get(`http://localhost:5000/myArticles?email=${user?.email}`, { withCredentials: true })
+        const data = await axios.get(`https://server-smoky-theta.vercel.app/myArticles?email=${user?.email}`, { withCredentials: true })
         return data
     }
     const { data, refetch } = useQuery({
@@ -15,7 +15,7 @@ const MyArticles = () => {
     })
     console.log(data?.data)
     return (
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 w-[100%] lg:w-[60%] mx-auto mt-10">
             {
                 data?.data.map(item=> <MyArticlesCart key={item._id} item={item}></MyArticlesCart>)
             }

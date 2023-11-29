@@ -83,7 +83,7 @@ const Footer = () => {
                             <img src={logo} className="h-20" alt="Flowbite Logo" />
                         </a>
                         <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-                            <li className="hover:underline me-4 lg:flex gap-5 md:me-6">
+                            <li className="hover:underline hidden lg:visible me-4 lg:flex gap-5 md:me-6">
                                 {navLink}
                             </li>
                         </ul>

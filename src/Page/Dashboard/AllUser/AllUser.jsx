@@ -5,7 +5,7 @@ import UserCart from "./UserCart";
 const AllUser = () => {
 
     const userInfo = async () => {
-        const data = await axios.get(`http://localhost:5000/user`, { withCredentials: true })
+        const data = await axios.get(`https://server-smoky-theta.vercel.app/user`, { withCredentials: true })
         return data
     }
     const { data, refetch } = useQuery({

@@ -15,7 +15,7 @@ const Dashboard = () => {
                 <NavLink className='px-3 py-2 bg-orange-400 rounded-md' to='/'>Home</NavLink>
 
             </div>
-            <div className="h-[100vh] px-5 pt-10 w-screen ">
+            <div className="h-[100vh] pt-10 w-screen ">
                 <Outlet></Outlet>
             </div>
         </div>

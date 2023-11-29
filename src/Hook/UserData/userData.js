@@ -7,6 +7,6 @@ export const saveUser =async user=>{
         image: user?.photoURL,
         role: 'user'
     }
-    const {data}=await axios.put(`http://localhost:5000/user/${user?.email}`,currentUser)
+    const {data}=await axios.put(`https://server-smoky-theta.vercel.app/user/${user?.email}`,currentUser)
     return data
 }

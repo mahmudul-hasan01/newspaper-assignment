@@ -31,10 +31,10 @@ const AuthProvider = ({ children }) => {
       setLoading(false)
       setUser(users)
       if(users){
-        axios.post('http://localhost:5000/jwt',userEmail,{withCredentials:true})
+        axios.post('https://server-smoky-theta.vercel.app/jwt',userEmail,{withCredentials:true})
         .then(data => console.log(data.data))
     }else{
-        axios.post('http://localhost:5000/logout',userEmail,{withCredentials:true})
+        axios.post('https://server-smoky-theta.vercel.app/logout',userEmail,{withCredentials:true})
         .then(data => console.log(data.data))
     }
     })

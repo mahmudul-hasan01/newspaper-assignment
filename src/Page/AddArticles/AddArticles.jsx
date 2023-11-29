@@ -12,7 +12,7 @@ const AddArticles = () => {
     const { user } = useAuth()
 
     const publisherInfo = async () => {
-        const data = await axios.get(`http://localhost:5000/publisher`, { withCredentials: true })
+        const data = await axios.get(`https://server-smoky-theta.vercel.app/publisher`, { withCredentials: true })
         return data
     }
     const { data } = useQuery({
@@ -48,7 +48,7 @@ const AddArticles = () => {
             premium: 'no',
             date
         }
-        axios.post('http://localhost:5000/addArticle', allData)
+        axios.post('https://server-smoky-theta.vercel.app/addArticle', allData)
             .then(res => console.log(res.data))
 
     }
@@ -77,11 +77,11 @@ const AddArticles = () => {
                     <textarea id="message" name="description" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description"></textarea>
                 </div>
                 <div className="mb-5">
-                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your Logo</label>
+                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your Image</label>
                     <input type="file" name="image" required />
                 </div>
 
-                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register new account</button>
+                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
 
         </div>

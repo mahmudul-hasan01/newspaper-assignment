@@ -16,7 +16,7 @@ const ArticlesSlider = () => {
                 mousewheel={true}
                 keyboard={true}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                className="w-[600px] h-[400px]"
+                className="md:w-[600px] h-[400px]"
             >
                 <SwiperSlide className=''>
                     <img className='w-full' src={img1} alt="" />

@@ -9,7 +9,7 @@ const Modal = ({_id,refetch}) => {
         const form = e.target
         const status = form.decline.value
         const data = { status }
-        axios.patch(`http://localhost:5000/addArticle/${_id}`,data )
+        axios.patch(`https://server-smoky-theta.vercel.app/addArticle/${_id}`,data )
             .then(data => console.log(data?.data))
             refetch()
     }

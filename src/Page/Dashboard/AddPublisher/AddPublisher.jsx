@@ -14,7 +14,7 @@ const AddPublisher = () => {
         const { data } = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KYE}`, formData)
         const logo =data?.data?.display_url
         const publisherData ={name , logo}
-        await axios.post('http://localhost:5000/publisher',publisherData)
+        await axios.post('https://server-smoky-theta.vercel.app/publisher',publisherData)
         .then(res=> console.log(res.data))
 
     }

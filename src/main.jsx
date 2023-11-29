@@ -24,11 +24,15 @@ import UserPhoto from './Page/UserPhoto/UserPhoto.jsx';
 import AllUser from './Page/Dashboard/AllUser/AllUser.jsx';
 import AddPublisher from './Page/Dashboard/AddPublisher/AddPublisher.jsx';
 import AllArticle from './Page/Dashboard/AllArticles/AllArticle.jsx';
+import ArticlesDetails from './Page/AllArticles/ArticlesDetails.jsx';
+import PageNotFound from './Page/PageNotFound/PageNotFound.jsx';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <PageNotFound></PageNotFound>,
     children: [
       {
         path: '/',
@@ -44,33 +48,38 @@ const router = createBrowserRouter([
       },
       {
         path: 'addArticles',
-        element: <AddArticles></AddArticles>
+        element: <PrivateRoute><AddArticles></AddArticles></PrivateRoute>
       },
       {
         path: 'allArticles',
         element: <AllArticles></AllArticles>
       },
       {
+        path: 'articlesDetails/:id',
+        element: <PrivateRoute><ArticlesDetails></ArticlesDetails></PrivateRoute>,
+        loader: ({params})=>fetch(`https://server-smoky-theta.vercel.app/articleDetails/${params.id}`)
+      },
+      {
         path: 'subscription',
-        element: <Subscription></Subscription>
+        element: <PrivateRoute><Subscription></Subscription></PrivateRoute>
       },
       {
         path: 'myArticles',
-        element: <MyArticles></MyArticles>
+        element: <PrivateRoute><MyArticles></MyArticles></PrivateRoute>
       },
       {
         path: 'premiumArticles',
-        element: <PremiumArticles></PremiumArticles>
+        element: <PrivateRoute><PremiumArticles></PremiumArticles></PrivateRoute>
       },
       {
         path: 'userPhoto',
-        element: <UserPhoto></UserPhoto>
+        element: <PrivateRoute><UserPhoto></UserPhoto></PrivateRoute>
       }
     ]
   },
   {
     path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: 'allUser',

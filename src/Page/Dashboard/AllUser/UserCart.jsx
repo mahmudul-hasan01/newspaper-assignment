@@ -10,13 +10,13 @@ const UserCart = ({ info, refetch }) => {
     const hendleApproved = () => {
         const role = 'admin'
         const data = { role }
-        axios.patch(`http://localhost:5000/user/${_id}`, data)
+        axios.patch(`https://server-smoky-theta.vercel.app/user/${_id}`, data)
             .then(data => console.log(data?.data))
         refetch()
     }
 
     const hendleDelete = (id) => {
-        axios.delete(`http://localhost:5000/user/${id}`)
+        axios.delete(`https://server-smoky-theta.vercel.app/user/${id}`)
             .then(data => console.log(data?.data))
         refetch()
     }
@@ -38,7 +38,7 @@ const UserCart = ({ info, refetch }) => {
                     {role}
                 </td>
                 <td className="px-2 py-4">
-                    <button onClick={hendleApproved}>Make Admin</button>
+                    <button className="px-5 py-2.5 text-white font-semibold bg-blue-600 rounded-xl" onClick={hendleApproved}>Make Admin</button>
                 </td>
                 <td className="px-2 py-4">
                     <button onClick={() => hendleDelete(_id)}><MdDeleteForever className='text-3xl' /></button>

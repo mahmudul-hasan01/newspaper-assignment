@@ -1,10 +1,12 @@
 import { FaCrown } from "react-icons/fa6";
+import { useLoaderData } from "react-router-dom";
 
-const MyArticlesCart = ({item}) => {
-    const { _id, title, image, publisher, description, tags, name, photo, email, status, premium, date } = item
+const ArticlesDetails = () => {
+    const data =useLoaderData()
+    const { _id, title, image, publisher, description, premium} = data
     return (
         <div>
-             <div className="w-full bg-white border relative border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+             <div className="w-[60%] mx-auto bg-white border relative border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img className="rounded-t-lg" src={image} alt="" />
                 </a>
@@ -23,4 +25,4 @@ const MyArticlesCart = ({item}) => {
     );
 };
 
-export default MyArticlesCart;
+export default ArticlesDetails;

@@ -1,7 +1,6 @@
 import image from '../../assets/logo/registration.jpg'
 import { FcGoogle } from "react-icons/fc";
 import Swal from 'sweetalert2';
-import { imageUplode } from '../../Hook/Image/ImageHost';
 import useAuth from '../../Hook/AuthHook/useAuth';
 import axios from 'axios';
 import { saveUser } from '../../Hook/UserData/userData';
@@ -30,20 +29,12 @@ const Register = () => {
             console.log(err)
         }
 
-        // .then(data => {
-        //     return Swal.fire(
-        //         'Good!',
-        //         'Successfully Register.',
-        //         'success'
-        //     )
-        // })
-        // .catch(error => console.log(error))
     }
-    // const hendleGoogleLogin = () => {
-    //     googleLogin()
-    //         .then()
-    //         .catch()
-    // }
+    const hendleGoogleLogin = () => {
+        googleLogin()
+            .then()
+            .catch()
+    }
 
 
     return (
@@ -74,12 +65,13 @@ const Register = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Photo</label>
                             <input type="file" name='photo' id="Photo" placeholder="Enter Your Photo" />
                         </div>
-                        <span className='text-blue-500'><Link to='/login'>Login</Link></span>
+                        <span>You have account? Please <Link  className='text-blue-500 underline' to='/login'>Login</Link></span>
                         <div className="form-control mt-6">
-                            <button className="py-2 px-5 rounded-lg text-white bg-yellow-500">Register</button>
+                            <button className="py-2 px-5 rounded-lg text-white bg-blue-600">Register</button>
+                            <button onClick={hendleGoogleLogin} className="py-2 ml-5 px-5 rounded-lg text-white bg-blue-600"> Google</button>
                         </div>
                     </form>
-                    {/* <button className=" border-2 w-3/5  text-xl " onClick={hendleGoogleLogin}><FcGoogle></FcGoogle> Google</button> */}
+                    {/* <button className=" border-2 w-3/5  text-xl " onClick={hendleGoogleLogin}>< Google</button> */}
 
                 </div>
                 <div>

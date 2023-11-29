@@ -11,7 +11,7 @@ const PremiumModal = ({_id,refetch}) => {
         const premium = form.premium.value
         const data = { premium }
         console.log(data)
-        axios.patch(`http://localhost:5000/premium/${_id}`,data )
+        axios.patch(`https://server-smoky-theta.vercel.app/premium/${_id}`,data )
             .then(data => console.log(data?.data))
             refetch()
     }
